@@ -1,0 +1,85 @@
+﻿@model web.Models.Contrato
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Contrato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CantidadCamiones" class="control-label">Cantidad Camiones</label>
+                <input asp-for="CantidadCamiones" class="form-control" />
+                <span asp-validation-for="CantidadCamiones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadEnToneladas" class="control-label">Cantidad en Toneladas</label>
+                <input asp-for="CantidadEnToneladas" class="form-control" />
+                <span asp-validation-for="CantidadEnToneladas" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">Cumplido
+                    <input class="form-check-input" asp-for="Cumplido" /> @Html.DisplayNameFor(model => model.Cumplido)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaEmision" class="control-label">Fecha Emision</label>
+                <input asp-for="FechaEmision" class="form-control" />
+                <span asp-validation-for="FechaEmision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaLimite" class="control-label">Fecha Limite</label>
+                <input asp-for="FechaLimite" class="form-control" />
+                <span asp-validation-for="FechaLimite" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">Medido en Toneladas
+                    <input class="form-check-input" asp-for="MedidoEnToneladas" /> @Html.DisplayNameFor(model => model.MedidoEnToneladas)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetodoDePago" class="control-label">Metodo de pago</label>
+                <input asp-for="MetodoDePago" class="form-control" />
+                <span asp-validation-for="MetodoDePago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label">Numero</label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioTonelada" class="control-label">Precio Tonelada</label>
+                <input asp-for="PrecioTonelada" class="form-control" />
+                <span asp-validation-for="PrecioTonelada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProveedorId" class="control-label">Proveedor</label>
+                <select asp-for="ProveedorId" class ="form-control" asp-items="ViewBag.ProveedorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GranoId" class="control-label">Grano</label>
+                <select asp-for="GranoId" class ="form-control" asp-items="ViewBag.GranoId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmpleadoId" class="control-label">Empleado</label>
+                <select asp-for="EmpleadoId" class ="form-control" asp-items="ViewBag.EmpleadoId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
